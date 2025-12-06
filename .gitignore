@@ -1,0 +1,10 @@
+﻿.idea/
+
+# Build outputs
+**/[Bb]in/*
+**/[Dd]ebug/*
+
+# NUnit
+*.VisualState.xml
+TestResult.xml
+nunit-*.xml
