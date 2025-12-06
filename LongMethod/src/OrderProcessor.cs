@@ -21,7 +21,10 @@ public class OrderProcessor
 
         // check if customer name is missing
         if (string.IsNullOrEmpty(order.CustomerName))
+        {
             invoice.Warnings.Add("Customer name is missing");
+            return invoice;
+        }
 
         // check if order is empty
         if (order.Items.Count == 0)
