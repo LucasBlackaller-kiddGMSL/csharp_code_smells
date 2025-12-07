@@ -4,6 +4,7 @@
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;NUnit3x::C65FE55D-F19E-49B6-B7BB-406895CDD78E::net6.0::LongMethod.Test.OrderProcessorTests.OrderProcessorTests&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::756A4CB1-3F5E-47A7-90C5-D0E2335CAEA9::net6.0::Comments.Test.RoverTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::4845E394-77CC-4450-B895-ADF104788994::net6.0::Duplication.Test.InvoiceTests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=852649f7_002D4237_002D482a_002Dadc9_002Ddb63ca10e46a/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="All tests from Solution" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
