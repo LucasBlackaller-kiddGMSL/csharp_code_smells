@@ -3,24 +3,20 @@
 using System.Collections.Generic;
 using System.Linq;
 
-    // This class violates SRP: it manages order items, calculates tax, and calculates shipping
     public class Order
     {
-        private List<OrderItem> _items = new List<OrderItem>();
+        private readonly List<OrderItem> _items = new List<OrderItem>();
 
-        // Add an item to the order
         public void AddItem(decimal price, int quantity)
         {
             _items.Add(new OrderItem { Price = price, Quantity = quantity });
         }
 
-        // Calculate total price of items
         public decimal CalculateTotal()
         {
             return _items.Sum(item => item.Price * item.Quantity);
         }
 
-        // Responsibility 1: Calculate sales tax based on jurisdiction
         public decimal CalculateTax(string jurisdiction)
         {
             decimal taxRate = jurisdiction switch
@@ -34,7 +30,6 @@ using System.Linq;
             return CalculateTotal() * taxRate;
         }
 
-        // Responsibility 2: Calculate shipping based on total and region
         public decimal CalculateShipping(string region)
         {
             decimal total = CalculateTotal();
@@ -50,13 +45,12 @@ using System.Linq;
             return shipping;
         }
 
-        // Properties for testing/inspection
         public List<OrderItem> Items => _items;
     }
 
     public class OrderItem
     {
-        public decimal Price { get; set; }
-        public int Quantity { get; set; }
+        public decimal Price { get; init; }
+        public int Quantity { get; init; }
     }
 
