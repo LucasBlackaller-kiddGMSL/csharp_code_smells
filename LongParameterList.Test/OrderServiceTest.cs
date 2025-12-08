@@ -4,7 +4,7 @@
 public class OrderServiceTests
 {
     [Test]
-    public void CreateOrder_ShouldCreateOrderWithCorrectProperties()
+    public void CreateOrder_ShouldCreateOrderWithCorrectData()
     {
         Item item = new Item(2, 1220.50m);
         string customerName = "Alice";
