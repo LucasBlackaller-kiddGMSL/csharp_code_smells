@@ -4,7 +4,7 @@ public static class Tax
 {
     public static decimal CalculateTax(string jurisdiction, decimal total)
     {
-        decimal taxRate = jurisdiction switch
+        var taxRate = jurisdiction switch
         {
             "EU" => 0.20m,
             "UK" => 0.21m,
