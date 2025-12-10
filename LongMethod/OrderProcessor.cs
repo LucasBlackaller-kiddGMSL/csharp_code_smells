@@ -36,13 +36,11 @@ public class OrderProcessor
             });
         }
 
-        var invoice = new Invoice
-        {
-            CustomerName = order?.CustomerName,
-            Items = invoiceItems,
-            Warnings = warnings,
-            Subtotal = invoiceItems.Sum(item => item.Total)
-        };
+        var invoice = new Invoice(
+            customerName: order.CustomerName,
+            items: invoiceItems,
+            warnings: warnings,
+            subtotal: invoiceItems.Sum(item => item.Total));
 
         // Apply discount
         
@@ -114,6 +112,18 @@ public class OrderItem
 // Invoice Classes
 public class Invoice
 {
+    public Invoice(
+        string? customerName,
+        List<InvoiceItem>? items,
+        List<string>? warnings,
+        decimal subtotal)
+    {
+        CustomerName = customerName;
+        Items = items;
+        Warnings = warnings;
+        Subtotal = subtotal;
+    }
+
     public string? CustomerName { get; set; }
     public List<InvoiceItem>? Items { get; init; }
     public decimal Subtotal { get; set; }
