@@ -69,8 +69,6 @@ public class OrderProcessor
 
     private static decimal GetDiscount(decimal subtotal)
     {
-        decimal discount = 0;
-
         // 10% discount on orders over £500
         if (subtotal > 500)
         {
@@ -83,7 +81,7 @@ public class OrderProcessor
             return subtotal * 0.05m;
         }
 
-        return discount;
+        return 0;
     }
 
     private static void ValidateOrder(Order order)
