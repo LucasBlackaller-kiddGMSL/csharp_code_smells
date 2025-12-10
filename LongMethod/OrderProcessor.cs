@@ -123,12 +123,12 @@ public class Invoice
     }
 
     public string? CustomerName { get; set; }
-    public List<InvoiceItem>? Items { get; init; }
-    public decimal Subtotal { get; set; }
+    public List<InvoiceItem>? Items { get; }
+    public decimal Subtotal { get; }
     public decimal Discount { get; set; }
     public decimal Shipping { get; set; }
     public decimal Total { get; set; }
-    public List<string>? Warnings { get; init; }
+    public List<string>? Warnings { get; }
 
     public decimal GetDiscount()
     {
