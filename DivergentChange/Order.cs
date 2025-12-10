@@ -5,19 +5,17 @@ using System.Linq;
 
     public class Order
     {
-        private readonly List<OrderItem> _items = new List<OrderItem>();
-
         public void AddItem(decimal price, int quantity)
         {
-            _items.Add(new OrderItem { Price = price, Quantity = quantity });
+            Items.Add(new OrderItem { Price = price, Quantity = quantity });
         }
 
         public decimal CalculateTotal()
         {
-            return _items.Sum(item => item.Price * item.Quantity);
+            return Items.Sum(item => item.Price * item.Quantity);
         }
 
-        public List<OrderItem> Items => _items;
+        public List<OrderItem> Items { get; } = new();
     }
 
     public class OrderItem
