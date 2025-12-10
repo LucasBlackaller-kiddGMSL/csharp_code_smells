@@ -125,7 +125,7 @@ public class Invoice
     public decimal Total { get; set; }
     public List<string>? Warnings { get; }
 
-    public decimal GetDiscount()
+    private decimal GetDiscount()
     {
         // 10% discount on orders over £500
         if (this.Subtotal > 500)
