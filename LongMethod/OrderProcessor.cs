@@ -39,8 +39,7 @@ public class OrderProcessor
         var invoice = new Invoice(
             customerName: order.CustomerName,
             items: invoiceItems,
-            warnings: warnings,
-            subtotal: invoiceItems.Sum(item => item.Total));
+            warnings: warnings);
 
         // Apply discount
         
@@ -115,13 +114,12 @@ public class Invoice
     public Invoice(
         string? customerName,
         List<InvoiceItem>? items,
-        List<string>? warnings,
-        decimal subtotal)
+        List<string>? warnings)
     {
         CustomerName = customerName;
         Items = items;
         Warnings = warnings;
-        Subtotal = subtotal;
+        Subtotal = items.Sum(item => item.Total);
     }
 
     public string? CustomerName { get; set; }
