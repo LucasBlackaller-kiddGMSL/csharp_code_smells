@@ -49,7 +49,7 @@ public class OrderProcessor
             Warnings = warnings
         };
 
-        var subtotal = subtotal1;
+        var subtotal = invoice.Items.Sum(item => item.Total);
 
         // Apply discount
         
