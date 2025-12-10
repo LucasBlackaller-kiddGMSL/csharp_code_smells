@@ -52,25 +52,25 @@ public class MarsRover
         if (Facing == facingNorth)
         {
             // Y - 1
-            Coordinates[1] = Coordinates[1] - 1;
+            Coordinates[1] -= 1;
         }
 
         if (Facing == facingEast)
         {
             // X - 1
-            Coordinates[0] = Coordinates[0] - 1;
+            Coordinates[0] -= 1;
         }
 
         if (Facing == facingSouth)
         {
             // Y + 1
-            Coordinates[1] = Coordinates[1] + 1;
+            Coordinates[1] += 1;
         }
 
         if (Facing == facingWest)
         {
             // X + 1
-            Coordinates[0] = Coordinates[0] + 1;
+            Coordinates[0] += 1;
         }
     }
 
@@ -79,25 +79,25 @@ public class MarsRover
         if (Facing == facingNorth)
         {
             // Y + 1
-            Coordinates[1] = Coordinates[1] + 1;
+            Coordinates[1] += 1;
         }
 
         if (Facing == facingEast)
         {
             // X + 1
-            Coordinates[0] = Coordinates[0] + 1;
+            Coordinates[0] += 1;
         }
 
         if (Facing == facingSouth)
         {
             // Y - 1
-            Coordinates[1] = Coordinates[1] - 1;
+            Coordinates[1] -= 1;
         }
 
         if (Facing == facingWest)
         {
             // X - 1
-            Coordinates[0] = Coordinates[0] - 1;
+            Coordinates[0] -= 1;
         }
     }
 
