@@ -16,14 +16,14 @@ public class MarsRover
 
     public int YAxis
     {
-        get => XAxis; 
-        set => XAxis = value;
+        get => Coordinates[1]; 
+        set => Coordinates[1] = value;
     }
 
     public int XAxis
     {
-        get => Coordinates[1];
-        set => Coordinates[1] = value;
+        get => Coordinates[0];
+        set => Coordinates[0] = value;
     }
 
     public MarsRover(string facing, int[] coordinates)
