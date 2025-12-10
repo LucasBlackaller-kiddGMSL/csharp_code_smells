@@ -1,11 +1,15 @@
 ﻿namespace Comments;
 
+public class Directions
+{
+    public const string North = "N";
+    public const string East = "E";
+    public const string South = "S";
+    public const string West = "W";
+}
+
 public class MarsRover
 {
-    private const string facingNorth = "N";
-    private const string facingEast = "E";
-    private const string facingSouth = "S";
-    private const string facingWest = "W";
     private const int Right = 'R';
     private const int Left = 'L';
     private const int Forward = 'F';
@@ -66,22 +70,22 @@ public class MarsRover
 
     private void MoveBackward()
     {
-        if (Facing == facingNorth)
+        if (Facing == Directions.North)
         {
             YAxis -= 1;
         }
 
-        if (Facing == facingEast)
+        if (Facing == Directions.East)
         {
             XAxis -= 1;
         }
 
-        if (Facing == facingSouth)
+        if (Facing == Directions.South)
         {
             YAxis += 1;
         }
 
-        if (Facing == facingWest)
+        if (Facing == Directions.West)
         {
             XAxis += 1;
         }
@@ -89,22 +93,22 @@ public class MarsRover
 
     private void MoveForward()
     {
-        if (Facing == facingNorth)
+        if (Facing == Directions.North)
         {
             YAxis += 1;
         }
 
-        if (Facing == facingEast)
+        if (Facing == Directions.East)
         {
             XAxis += 1;
         }
 
-        if (Facing == facingSouth)
+        if (Facing == Directions.South)
         {
             YAxis -= 1;
         }
 
-        if (Facing == facingWest)
+        if (Facing == Directions.West)
         {
             XAxis -= 1;
         }
@@ -112,47 +116,47 @@ public class MarsRover
 
     private void TurnLeft()
     {
-        if (Facing == facingNorth)
+        if (Facing == Directions.North)
         {
-            Facing = facingWest;
+            Facing = Directions.West;
             return;
         }
 
-        if (Facing == facingWest)
+        if (Facing == Directions.West)
         {
-            Facing = facingSouth;
+            Facing = Directions.South;
             return;
         }
 
-        if (Facing == facingSouth)
+        if (Facing == Directions.South)
         {
-            Facing = facingEast;
+            Facing = Directions.East;
             return;
         }
 
-        Facing = facingNorth;
+        Facing = Directions.North;
     }
 
     private void TurnRight()
     {
-        if (Facing == facingNorth)
+        if (Facing == Directions.North)
         {
-            Facing = facingEast;
+            Facing = Directions.East;
             return;
         }
 
-        if (Facing == facingEast)
+        if (Facing == Directions.East)
         {
-            Facing = facingSouth;
+            Facing = Directions.South;
             return ;
         }
 
-        if (Facing == facingSouth)
+        if (Facing == Directions.South)
         {
-            Facing = facingWest;
+            Facing = Directions.West;
             return ;
         }
 
-        Facing = facingNorth;
+        Facing = Directions.North;
     }
 }
