@@ -9,12 +9,13 @@ public class OrderProcessor
         ValidateOrder(order);
 
         var invoiceItems = new List<InvoiceItem>();
-        
+        var warnings = new List<string>();
+
         var invoice = new Invoice
         {
             CustomerName = order?.CustomerName,
             Items = invoiceItems,
-            Warnings = new List<string>()
+            Warnings = warnings,
         };
 
         // subtotal order items
