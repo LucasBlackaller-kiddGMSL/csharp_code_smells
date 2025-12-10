@@ -3,9 +3,10 @@
 public class MarsRover
 {
     private const string facingNorth = "N";
-    private string facingEast = "E";
-    private string facingSouth = "S";
-    private string facingWest = "W";
+    private const string facingEast = "E";
+    private const string facingSouth = "S";
+    private const string facingWest = "W";
+
     public string Facing { get; private set; }
     public int[] Coordinates { get; }
 
