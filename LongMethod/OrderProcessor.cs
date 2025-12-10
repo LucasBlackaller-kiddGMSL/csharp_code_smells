@@ -40,18 +40,17 @@ public class OrderProcessor
         {
             CustomerName = order?.CustomerName,
             Items = invoiceItems,
-            Warnings = warnings
+            Warnings = warnings,
+            Subtotal = invoiceItems.Sum(item => item.Total)
         };
-
-        var subtotal = invoice.Items.Sum(item => item.Total);
 
         // Apply discount
         
-        var discount = GetDiscount(subtotal);
+        var discount = GetDiscount(invoice.Subtotal);
 
         invoice.Discount = discount;
 
-        decimal totalAfterDiscount = subtotal - discount;
+        decimal totalAfterDiscount = invoice.Subtotal - discount;
 
         // Shipping
         decimal shipping = 0; // shipping is free on orders >= £200
@@ -60,7 +59,6 @@ public class OrderProcessor
 
         decimal total = totalAfterDiscount + shipping;
 
-        invoice.Subtotal = subtotal;
         invoice.Shipping = shipping;
         invoice.Total = total;
 
