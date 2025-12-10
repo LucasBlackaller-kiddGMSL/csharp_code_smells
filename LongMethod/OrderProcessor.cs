@@ -76,8 +76,9 @@ public class OrderProcessor
         {
             return subtotal * 0.10m;
         }
+        
         // 5% discount on orders over £200, up to £500
-        else if (subtotal > 200)
+        if (subtotal > 200)
         {
             return subtotal * 0.05m;
         }
