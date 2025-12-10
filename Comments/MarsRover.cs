@@ -21,19 +21,16 @@ public class MarsRover
 
     private void Execute(char instruction)
     {
-        // R = Turn Right
         if (instruction == 'R')
         {
             TurnRight();
         }
 
-        // L = Turn Left
         if (instruction == 'L')
         {
             TurnLeft();
         }
 
-        // F = Move Forward
         if (instruction == 'F')
         {
             MoveForward();
