@@ -126,24 +126,20 @@ public class MarsRover
 
     private void TurnRight()
     {
-        // N = North
         if (Facing == facingNorth)
         {
-            // E = East
             Facing = facingEast;
             return;
         }
 
         if (Facing == facingEast)
         {
-            // S = South
             Facing = facingSouth;
             return ;
         }
 
         if (Facing == facingSouth)
         {
-            // W = West
             Facing = facingWest;
             return ;
         }
