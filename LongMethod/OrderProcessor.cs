@@ -116,6 +116,7 @@ public class Invoice
         Items = items;
         Warnings = warnings;
         Subtotal = items.Sum(item => item.Total);
+        Discount = GetDiscount();
     }
 
     public string? CustomerName { get; set; }
