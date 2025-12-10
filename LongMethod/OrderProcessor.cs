@@ -27,15 +27,12 @@ public class OrderProcessor
                 continue;
             }
 
-            // calculate item subtotal
-            decimal totalItemPrice = item.ItemTotalPrice();
-
             invoiceItems.Add(new InvoiceItem
             {
                 Name = item.Name,
                 Quantity = item.Quantity,
                 Price = item.Price,
-                Total = totalItemPrice
+                Total = item.ItemTotalPrice()
             });
         }
 
