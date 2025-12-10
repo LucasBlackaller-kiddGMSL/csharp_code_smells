@@ -41,29 +41,34 @@ public class MarsRover
 
         if (instruction == 'B')
         {
-            if (Facing == "N")
-            {
-                // Y - 1
-                Coordinates[1] = Coordinates[1] - 1;
-            }
+            MoveBackward();
+        }
+    }
 
-            if (Facing == "E")
-            {
-                // X - 1
-                Coordinates[0] = Coordinates[0] - 1;
-            }
+    private void MoveBackward()
+    {
+        if (Facing == "N")
+        {
+            // Y - 1
+            Coordinates[1] = Coordinates[1] - 1;
+        }
 
-            if (Facing == "S")
-            {
-                // Y + 1
-                Coordinates[1] = Coordinates[1] + 1;
-            }
+        if (Facing == "E")
+        {
+            // X - 1
+            Coordinates[0] = Coordinates[0] - 1;
+        }
 
-            if (Facing == "W")
-            {
-                // X + 1
-                Coordinates[0] = Coordinates[0] + 1;
-            }
+        if (Facing == "S")
+        {
+            // Y + 1
+            Coordinates[1] = Coordinates[1] + 1;
+        }
+
+        if (Facing == "W")
+        {
+            // X + 1
+            Coordinates[0] = Coordinates[0] + 1;
         }
     }
 
