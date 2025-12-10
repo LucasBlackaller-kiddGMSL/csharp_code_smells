@@ -40,7 +40,7 @@ public class OrderTests
     public decimal CalculateTax_ShouldApplyCorrectTaxRate(string jurisdiction, double taxRate, decimal orderTotal)
     {
         _order.AddItem(orderTotal, 1);
-        return _order.CalculateTax(jurisdiction);
+        return _order.CalculateTax(jurisdiction, _order.CalculateTotal());
     }
 
     [TestCase("EU", 50, ExpectedResult = 10)]

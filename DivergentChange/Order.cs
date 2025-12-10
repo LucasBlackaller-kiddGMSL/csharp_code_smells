@@ -17,7 +17,7 @@ using System.Linq;
             return _items.Sum(item => item.Price * item.Quantity);
         }
 
-        public decimal CalculateTax(string jurisdiction)
+        public decimal CalculateTax(string jurisdiction, decimal total)
         {
             decimal taxRate = jurisdiction switch
             {
@@ -27,7 +27,7 @@ using System.Linq;
                 _ => 0.10m
             };
 
-            return CalculateTotal() * taxRate;
+            return total * taxRate;
         }
 
         public decimal CalculateShipping(string region)
