@@ -2,6 +2,10 @@
 
 public class MarsRover
 {
+    private const string facingNorth = "N";
+    private string facingEast = "E";
+    private string facingSouth = "S";
+    private string facingWest = "W";
     public string Facing { get; private set; }
     public int[] Coordinates { get; }
 
@@ -44,25 +48,25 @@ public class MarsRover
 
     private void MoveBackward()
     {
-        if (Facing == "N")
+        if (Facing == facingNorth)
         {
             // Y - 1
             Coordinates[1] = Coordinates[1] - 1;
         }
 
-        if (Facing == "E")
+        if (Facing == facingEast)
         {
             // X - 1
             Coordinates[0] = Coordinates[0] - 1;
         }
 
-        if (Facing == "S")
+        if (Facing == facingSouth)
         {
             // Y + 1
             Coordinates[1] = Coordinates[1] + 1;
         }
 
-        if (Facing == "W")
+        if (Facing == facingWest)
         {
             // X + 1
             Coordinates[0] = Coordinates[0] + 1;
@@ -77,19 +81,19 @@ public class MarsRover
             Coordinates[1] = Coordinates[1] + 1;
         }
 
-        if (Facing == "E")
+        if (Facing == facingEast)
         {
             // X + 1
             Coordinates[0] = Coordinates[0] + 1;
         }
 
-        if (Facing == "S")
+        if (Facing == facingSouth)
         {
             // Y - 1
             Coordinates[1] = Coordinates[1] - 1;
         }
 
-        if (Facing == "W")
+        if (Facing == facingWest)
         {
             // X - 1
             Coordinates[0] = Coordinates[0] - 1;
@@ -100,19 +104,19 @@ public class MarsRover
     {
         if (Facing == "N")
         {
-            Facing = "W";
+            Facing = facingWest;
             return;
         }
 
-        if (Facing == "W")
+        if (Facing == facingWest)
         {
-            Facing = "S";
+            Facing = facingSouth;
             return;
         }
 
-        if (Facing == "S")
+        if (Facing == facingSouth)
         {
-            Facing = "E";
+            Facing = facingEast;
             return;
         }
 
@@ -125,21 +129,21 @@ public class MarsRover
         if (Facing == "N")
         {
             // E = East
-            Facing = "E";
+            Facing = facingEast;
             return;
         }
 
-        if (Facing == "E")
+        if (Facing == facingEast)
         {
             // S = South
-            Facing = "S";
+            Facing = facingSouth;
             return ;
         }
 
-        if (Facing == "S")
+        if (Facing == facingSouth)
         {
             // W = West
-            Facing = "W";
+            Facing = facingWest;
             return ;
         }
 
