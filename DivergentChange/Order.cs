@@ -17,9 +17,8 @@ using System.Linq;
             return _items.Sum(item => item.Price * item.Quantity);
         }
 
-        public decimal CalculateShipping(string region)
+        public decimal CalculateShipping(string region, decimal total)
         {
-            decimal total = CalculateTotal();
             decimal shipping;
 
             if (region == "EU")
