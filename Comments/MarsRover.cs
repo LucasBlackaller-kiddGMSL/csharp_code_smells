@@ -12,8 +12,8 @@ public class MarsRover
 
     public int YAxis
     {
-        get => Coordinates[0]; 
-        set => Coordinates[0] = value;
+        get => XAxis; 
+        set => XAxis = value;
     }
 
     public int XAxis
@@ -70,7 +70,7 @@ public class MarsRover
         if (Facing == facingEast)
         {
             // X - 1
-            Coordinates[0] -= 1;
+            XAxis -= 1;
         }
 
         if (Facing == facingSouth)
@@ -82,7 +82,7 @@ public class MarsRover
         if (Facing == facingWest)
         {
             // X + 1
-            Coordinates[0] += 1;
+            XAxis += 1;
         }
     }
 
@@ -97,7 +97,7 @@ public class MarsRover
         if (Facing == facingEast)
         {
             // X + 1
-            Coordinates[0] += 1;
+            XAxis += 1;
         }
 
         if (Facing == facingSouth)
@@ -109,7 +109,7 @@ public class MarsRover
         if (Facing == facingWest)
         {
             // X - 1
-            Coordinates[0] -= 1;
+            XAxis -= 1;
         }
     }
 
