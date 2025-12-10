@@ -43,22 +43,21 @@ public class OrderProcessor
 
         decimal totalAfterDiscount = invoice.Subtotal - invoice.Discount;
 
-        var shipping = CalculateShipping(totalAfterDiscount, invoice);
+        invoice.Shipping = CalculateShipping(totalAfterDiscount);
 
-        decimal total = totalAfterDiscount + shipping;
+        decimal total = totalAfterDiscount + invoice.Shipping;
         invoice.Total = total;
 
         return invoice;
     }
 
-    private static decimal CalculateShipping(decimal totalAfterDiscount, Invoice invoice)
+    private static decimal CalculateShipping(decimal totalAfterDiscount)
     {
         // Shipping
         decimal shipping = 0; // shipping is free on orders >= £200
         if (totalAfterDiscount < 50) shipping = 10;
         else if (totalAfterDiscount < 200) shipping = 5;
 
-        invoice.Shipping = shipping;
         return shipping;
     }
 
