@@ -9,3 +9,4 @@
 *.VisualState.xml
 TestResult.xml
 nunit-*.xml
+/.vs/code_smells
