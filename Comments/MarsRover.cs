@@ -8,6 +8,8 @@ public class MarsRover
     private const string facingWest = "W";
     private const int Right = 'R';
     private const int Left = 'L';
+    private const int Forward = 'F';
+    private const int Backward = 'B';
 
     public string Facing { get; private set; }
     public int[] Coordinates { get; }
@@ -50,12 +52,12 @@ public class MarsRover
             TurnLeft();
         }
 
-        if (instruction == 'F')
+        if (instruction == Forward)
         {
             MoveForward();
         }
 
-        if (instruction == 'B')
+        if (instruction == Backward)
         {
             MoveBackward();
         }
