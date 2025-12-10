@@ -30,7 +30,7 @@ public class OrderProcessor
             }
 
             // calculate item subtotal
-            decimal totalItemPrice = item.Price * item.Quantity;
+            decimal totalItemPrice = TotalItemPrice(item);
             subtotal1 += totalItemPrice;
 
             invoiceItems.Add(new InvoiceItem
@@ -76,6 +76,11 @@ public class OrderProcessor
         invoice.Total = total;
 
         return invoice;
+    }
+
+    private static decimal TotalItemPrice(OrderItem item)
+    {
+        return item.Price * item.Quantity;
     }
 
     private static void ValidateOrder(Order order)
