@@ -17,19 +17,6 @@ using System.Linq;
             return _items.Sum(item => item.Price * item.Quantity);
         }
 
-        public static decimal CalculateTax(string jurisdiction, decimal total)
-        {
-            decimal taxRate = jurisdiction switch
-            {
-                "EU" => 0.20m,
-                "UK" => 0.21m,
-                "US" => 0.07m,
-                _ => 0.10m
-            };
-
-            return total * taxRate;
-        }
-
         public decimal CalculateShipping(string region)
         {
             decimal total = CalculateTotal();
