@@ -13,8 +13,6 @@ public class OrderProcessor
 
         // subtotal order items
 
-        decimal subtotal1 = 0;
-
         foreach (var item in order.Items)
         {
             if (item.Quantity <= 0)
@@ -31,7 +29,6 @@ public class OrderProcessor
 
             // calculate item subtotal
             decimal totalItemPrice = item.ItemTotalPrice();
-            subtotal1 += totalItemPrice;
 
             invoiceItems.Add(new InvoiceItem
             {
