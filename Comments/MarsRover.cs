@@ -12,6 +12,10 @@ public class MarsRover
     private const int Backward = 'B';
 
     public string Facing { get; private set; }
+
+    private Dictionary<char, string> Directions = new Dictionary<char, string>()
+        { { 'N', facingNorth }, { 'E', facingEast }, { 'S', facingSouth }, { 'W', facingWest } };
+
     public int[] Coordinates { get; }
 
     public int YAxis
