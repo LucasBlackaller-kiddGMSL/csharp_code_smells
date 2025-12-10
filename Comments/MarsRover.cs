@@ -24,29 +24,7 @@ public class MarsRover
         // R = Turn Right
         if (instruction == 'R')
         {
-            // N = North
-            if (Facing == "N")
-            {
-                // E = East
-                Facing = "E";
-                return;
-            }
-
-            if (Facing == "E")
-            {
-                // S = South
-                Facing = "S";
-                return;
-            }
-
-            if (Facing == "S")
-            {
-                // W = West
-                Facing = "W";
-                return;
-            }
-
-            Facing = "N";
+            TurnRight();
         }
 
         // L = Turn Left
@@ -127,5 +105,32 @@ public class MarsRover
                 Coordinates[0] = Coordinates[0] + 1;
             }
         }
+    }
+
+    private void TurnRight()
+    {
+        // N = North
+        if (Facing == "N")
+        {
+            // E = East
+            Facing = "E";
+            return;
+        }
+
+        if (Facing == "E")
+        {
+            // S = South
+            Facing = "S";
+            return ;
+        }
+
+        if (Facing == "S")
+        {
+            // W = West
+            Facing = "W";
+            return ;
+        }
+
+        Facing = "N";
     }
 }
