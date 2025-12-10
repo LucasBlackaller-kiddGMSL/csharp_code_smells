@@ -52,6 +52,6 @@ public class OrderTests
     public decimal CalculateShipping_ShouldReturnCorrectShipping(string region, decimal total)
     {
         _order.AddItem(total, 1);
-        return _order.CalculateShipping(region, _order.CalculateTotal());
+        return Shipping.CalculateShipping(region, _order.CalculateTotal());
     }
 }
