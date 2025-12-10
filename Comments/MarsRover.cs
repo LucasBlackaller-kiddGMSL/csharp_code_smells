@@ -63,25 +63,21 @@ public class MarsRover
     {
         if (Facing == facingNorth)
         {
-            // Y - 1
             YAxis -= 1;
         }
 
         if (Facing == facingEast)
         {
-            // X - 1
             XAxis -= 1;
         }
 
         if (Facing == facingSouth)
         {
-            // Y + 1
             YAxis += 1;
         }
 
         if (Facing == facingWest)
         {
-            // X + 1
             XAxis += 1;
         }
     }
@@ -90,25 +86,21 @@ public class MarsRover
     {
         if (Facing == facingNorth)
         {
-            // Y + 1
             YAxis += 1;
         }
 
         if (Facing == facingEast)
         {
-            // X + 1
             XAxis += 1;
         }
 
         if (Facing == facingSouth)
         {
-            // Y - 1
             YAxis -= 1;
         }
 
         if (Facing == facingWest)
         {
-            // X - 1
             XAxis -= 1;
         }
     }
