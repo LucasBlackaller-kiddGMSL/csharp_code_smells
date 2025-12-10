@@ -11,13 +11,6 @@ public class OrderProcessor
         var invoiceItems = new List<InvoiceItem>();
         var warnings = new List<string>();
 
-        var invoice = new Invoice
-        {
-            CustomerName = order?.CustomerName,
-            Items = invoiceItems,
-            Warnings = warnings
-        };
-
         // subtotal order items
 
         decimal subtotal1 = 0;
@@ -48,6 +41,13 @@ public class OrderProcessor
                 Total = totalItemPrice
             });
         }
+
+        var invoice = new Invoice
+        {
+            CustomerName = order?.CustomerName,
+            Items = invoiceItems,
+            Warnings = warnings
+        };
 
         var subtotal = subtotal1;
 
