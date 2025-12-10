@@ -46,7 +46,7 @@ public class OrderProcessor
 
         // Apply discount
         
-        var discount = Invoice.GetDiscount(invoice.Subtotal);
+        var discount = invoice.GetDiscount();
 
         invoice.Discount = discount;
 
@@ -122,18 +122,18 @@ public class Invoice
     public decimal Total { get; set; }
     public List<string>? Warnings { get; init; }
 
-    public static decimal GetDiscount(decimal subtotal)
+    public decimal GetDiscount()
     {
         // 10% discount on orders over £500
-        if (subtotal > 500)
+        if (this.Subtotal > 500)
         {
-            return subtotal * 0.10m;
+            return this.Subtotal * 0.10m;
         }
         
         // 5% discount on orders over £200, up to £500
-        if (subtotal > 200)
+        if (this.Subtotal > 200)
         {
-            return subtotal * 0.05m;
+            return this.Subtotal * 0.05m;
         }
 
         return 0;
