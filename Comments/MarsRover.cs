@@ -7,6 +7,7 @@ public class MarsRover
     private const string facingSouth = "S";
     private const string facingWest = "W";
     private const int Right = 'R';
+    private const int Left = 'L';
 
     public string Facing { get; private set; }
     public int[] Coordinates { get; }
@@ -44,7 +45,7 @@ public class MarsRover
             TurnRight();
         }
 
-        if (instruction == 'L')
+        if (instruction == Left)
         {
             TurnLeft();
         }
