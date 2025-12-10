@@ -30,25 +30,7 @@ public class MarsRover
         // L = Turn Left
         if (instruction == 'L')
         {
-            if (Facing == "N")
-            {
-                Facing = "W";
-                return;
-            }
-
-            if (Facing == "W")
-            {
-                Facing = "S";
-                return;
-            }
-
-            if (Facing == "S")
-            {
-                Facing = "E";
-                return;
-            }
-
-            Facing = "N";
+            if (TurnLeft()) return;
         }
 
         // F = Move Forward
@@ -105,6 +87,30 @@ public class MarsRover
                 Coordinates[0] = Coordinates[0] + 1;
             }
         }
+    }
+
+    private bool TurnLeft()
+    {
+        if (Facing == "N")
+        {
+            Facing = "W";
+            return true;
+        }
+
+        if (Facing == "W")
+        {
+            Facing = "S";
+            return true;
+        }
+
+        if (Facing == "S")
+        {
+            Facing = "E";
+            return true;
+        }
+
+        Facing = "N";
+        return false;
     }
 
     private void TurnRight()
