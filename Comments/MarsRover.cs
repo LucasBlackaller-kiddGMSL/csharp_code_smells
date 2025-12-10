@@ -30,7 +30,7 @@ public class MarsRover
         // L = Turn Left
         if (instruction == 'L')
         {
-            if (TurnLeft()) return;
+            TurnLeft();
         }
 
         // F = Move Forward
@@ -89,28 +89,27 @@ public class MarsRover
         }
     }
 
-    private bool TurnLeft()
+    private void TurnLeft()
     {
         if (Facing == "N")
         {
             Facing = "W";
-            return true;
+            return;
         }
 
         if (Facing == "W")
         {
             Facing = "S";
-            return true;
+            return;
         }
 
         if (Facing == "S")
         {
             Facing = "E";
-            return true;
+            return;
         }
 
         Facing = "N";
-        return false;
     }
 
     private void TurnRight()
