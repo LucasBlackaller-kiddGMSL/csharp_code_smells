@@ -40,7 +40,7 @@ public class OrderProcessor
             decimal totalItemPrice = item.Price * item.Quantity;
             subtotal1 += totalItemPrice;
 
-            invoice.Items.Add(new InvoiceItem
+            invoiceItems.Add(new InvoiceItem
             {
                 Name = item.Name,
                 Quantity = item.Quantity,
