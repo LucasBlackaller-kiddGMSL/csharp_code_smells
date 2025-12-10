@@ -75,7 +75,7 @@ public class MarsRover
 
     private void MoveForward()
     {
-        if (Facing == "N")
+        if (Facing == facingNorth)
         {
             // Y + 1
             Coordinates[1] = Coordinates[1] + 1;
@@ -102,7 +102,7 @@ public class MarsRover
 
     private void TurnLeft()
     {
-        if (Facing == "N")
+        if (Facing == facingNorth)
         {
             Facing = facingWest;
             return;
@@ -120,13 +120,13 @@ public class MarsRover
             return;
         }
 
-        Facing = "N";
+        Facing = facingNorth;
     }
 
     private void TurnRight()
     {
         // N = North
-        if (Facing == "N")
+        if (Facing == facingNorth)
         {
             // E = East
             Facing = facingEast;
@@ -147,6 +147,6 @@ public class MarsRover
             return ;
         }
 
-        Facing = "N";
+        Facing = facingNorth;
     }
 }
