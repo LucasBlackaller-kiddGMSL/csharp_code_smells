@@ -17,10 +17,3 @@ using System.Linq;
 
         public List<OrderItem> Items { get; } = new();
     }
-
-    public class OrderItem
-    {
-        public decimal Price { get; init; }
-        public int Quantity { get; init; }
-    }
-
