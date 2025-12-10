@@ -70,7 +70,7 @@ public class MarsRover
         if (Facing == facingSouth)
         {
             // Y + 1
-            Coordinates[1] += 1;
+            YAxis += 1;
         }
 
         if (Facing == facingWest)
@@ -85,7 +85,7 @@ public class MarsRover
         if (Facing == facingNorth)
         {
             // Y + 1
-            Coordinates[1] += 1;
+            YAxis += 1;
         }
 
         if (Facing == facingEast)
@@ -97,7 +97,7 @@ public class MarsRover
         if (Facing == facingSouth)
         {
             // Y - 1
-            Coordinates[1] -= 1;
+            YAxis -= 1;
         }
 
         if (Facing == facingWest)
