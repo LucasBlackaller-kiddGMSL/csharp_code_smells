@@ -15,7 +15,7 @@ public class OrderProcessor
         {
             CustomerName = order?.CustomerName,
             Items = invoiceItems,
-            Warnings = warnings,
+            Warnings = warnings
         };
 
         // subtotal order items
@@ -26,13 +26,13 @@ public class OrderProcessor
         {
             if (item.Quantity <= 0)
             {
-                invoice.Warnings.Add($"Invalid quantity for item: {item.Name}");
+                warnings.Add($"Invalid quantity for item: {item.Name}");
                 continue;
             }
 
             if (item.Price < 0)
             {
-                invoice.Warnings.Add($"Invalid price for item: {item.Name}");
+                warnings.Add($"Invalid price for item: {item.Name}");
                 continue;
             }
 
