@@ -41,13 +41,9 @@ public class OrderProcessor
             items: invoiceItems,
             warnings: warnings);
 
-        // Apply discount
-        
-        var discount = invoice.GetDiscount();
+        invoice.Discount = invoice.GetDiscount();
 
-        invoice.Discount = discount;
-
-        decimal totalAfterDiscount = invoice.Subtotal - discount;
+        decimal totalAfterDiscount = invoice.Subtotal - invoice.GetDiscount();
 
         // Shipping
         decimal shipping = 0; // shipping is free on orders >= £200
