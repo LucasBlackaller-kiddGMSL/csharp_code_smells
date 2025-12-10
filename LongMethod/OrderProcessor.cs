@@ -47,12 +47,7 @@ public class OrderProcessor
 
         // Apply discount
         
-        decimal discount = 0;
-        
-        // 10% discount on orders over £500
-        if (subtotal > 500) discount = subtotal * 0.10m;
-        // 5% discount on orders over £200, up to £500
-        else if (subtotal > 200) discount = subtotal * 0.05m;
+        var discount = GetDiscount(subtotal);
 
         invoice.Discount = discount;
 
@@ -70,6 +65,18 @@ public class OrderProcessor
         invoice.Total = total;
 
         return invoice;
+    }
+
+    private static decimal GetDiscount(decimal subtotal)
+    {
+        decimal discount = 0;
+
+        // 10% discount on orders over £500
+        if (subtotal > 500) discount = subtotal * 0.10m;
+
+        // 5% discount on orders over £200, up to £500
+        else if (subtotal > 200) discount = subtotal * 0.05m;
+        return discount;
     }
 
     private static void ValidateOrder(Order order)
