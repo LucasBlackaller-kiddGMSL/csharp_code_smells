@@ -10,6 +10,12 @@ public class MarsRover
     public string Facing { get; private set; }
     public int[] Coordinates { get; }
 
+    public int YAxis
+    {
+        get => Coordinates[0]; 
+        set => Coordinates[0] = value;
+    }
+
     public MarsRover(string facing, int[] coordinates)
     {
         Facing = facing;
@@ -52,7 +58,7 @@ public class MarsRover
         if (Facing == facingNorth)
         {
             // Y - 1
-            Coordinates[1] -= 1;
+            YAxis -= 1;
         }
 
         if (Facing == facingEast)
