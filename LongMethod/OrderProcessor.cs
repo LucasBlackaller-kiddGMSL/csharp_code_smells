@@ -6,25 +6,7 @@ public class OrderProcessor
 {
     public Invoice ProcessOrder(Order order)
     {
-        // check if order is invalid
-
-        // can't be null
-        if (order == null)
-        {
-            throw new InvalidOrderException("Order is null");
-        }
-
-        // check if customer name is missing
-        if (string.IsNullOrEmpty(order.CustomerName))
-        {
-            throw new InvalidOrderException("Customer name is missing");
-        }
-
-        // check if order is empty
-        if (order.Items.Count == 0)
-        {
-            throw new InvalidOrderException("No items in order");
-        }
+        ValidateOrder(order);
 
         var invoice = new Invoice
         {
@@ -91,6 +73,29 @@ public class OrderProcessor
         invoice.Total = total;
 
         return invoice;
+    }
+
+    private static void ValidateOrder(Order order)
+    {
+        // check if order is invalid
+
+        // can't be null
+        if (order == null)
+        {
+            throw new InvalidOrderException("Order is null");
+        }
+
+        // check if customer name is missing
+        if (string.IsNullOrEmpty(order.CustomerName))
+        {
+            throw new InvalidOrderException("Customer name is missing");
+        }
+
+        // check if order is empty
+        if (order.Items.Count == 0)
+        {
+            throw new InvalidOrderException("No items in order");
+        }
     }
 }
 
