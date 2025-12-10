@@ -8,10 +8,12 @@ public class OrderProcessor
     {
         ValidateOrder(order);
 
+        var invoiceItems = new List<InvoiceItem>();
+        
         var invoice = new Invoice
         {
             CustomerName = order?.CustomerName,
-            Items = new List<InvoiceItem>(),
+            Items = invoiceItems,
             Warnings = new List<string>()
         };
 
