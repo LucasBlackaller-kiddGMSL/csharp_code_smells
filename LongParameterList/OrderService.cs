@@ -29,23 +29,23 @@ public class Item
 
 public class OrderService
 {
-    public Order CreateOrder(
-        string customerName,
+    public Order CreateOrder(string customerName,
         string customerEmail,
         string productName,
         int quantity,
         decimal price,
         string shippingAddress,
         string billingAddress,
-        DateTime orderDate)
+        DateTime orderDate, 
+        Item item)
     {
         var order = new Order
         {
             CustomerName = customerName,
             CustomerEmail = customerEmail,
             ProductName = productName,
-            Quantity = quantity,
-            Price = price,
+            Quantity = item.Quantity,
+            Price = item.Price,
             ShippingAddress = shippingAddress,
             BillingAddress = billingAddress,
             OrderDate = orderDate
