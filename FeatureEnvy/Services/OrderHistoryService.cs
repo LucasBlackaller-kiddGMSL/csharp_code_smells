@@ -17,6 +17,13 @@ public class OrderHistory
             o.Confirmed &&
             o.Items.Any(i => i.Product == product));
     }
+
+    public IEnumerable<Order> FindOrdersByAddress2(Address address)
+    {
+        return this.Orders.Where(o =>
+            o.Confirmed &&
+            o.ShippingAddress.Country == address.Country);
+    }
 }
 
 public class OrderHistoryService
@@ -35,13 +42,6 @@ public class OrderHistoryService
 
     public IEnumerable<Order> FindOrdersByAddress(Address address)
     {
-        return FindOrdersByAddress2(address);
-    }
-
-    private IEnumerable<Order> FindOrdersByAddress2(Address address)
-    {
-        return _orderHistory.Orders.Where(o =>
-            o.Confirmed &&
-            o.ShippingAddress.Country == address.Country);
+        return _orderHistory.FindOrdersByAddress2(address);
     }
 }
