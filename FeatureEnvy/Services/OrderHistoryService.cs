@@ -11,14 +11,14 @@ public class OrderHistory
 
     public List<Order> Orders { get; }
 
-    public IEnumerable<Order> FindOrdersByProduct2(Product product)
+    public IEnumerable<Order> FindOrdersByProduct(Product product)
     {
         return this.Orders.Where(o =>
             o.Confirmed &&
             o.Items.Any(i => i.Product == product));
     }
 
-    public IEnumerable<Order> FindOrdersByAddress2(Address address)
+    public IEnumerable<Order> FindOrdersByAddress(Address address)
     {
         return this.Orders.Where(o =>
             o.Confirmed &&
@@ -37,11 +37,11 @@ public class OrderHistoryService
 
     public IEnumerable<Order> FindOrdersByProduct(Product product)
     {
-        return _orderHistory.FindOrdersByProduct2(product);
+        return _orderHistory.FindOrdersByProduct(product);
     }
 
     public IEnumerable<Order> FindOrdersByAddress(Address address)
     {
-        return _orderHistory.FindOrdersByAddress2(address);
+        return _orderHistory.FindOrdersByAddress(address);
     }
 }
