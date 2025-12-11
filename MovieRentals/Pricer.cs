@@ -2,9 +2,13 @@
 
 namespace MovieRentals
 {
-    internal class Imdb
+    internal interface IImdb
     {
-        public static ImdbMovie ImdbMovie(string imdbId)
+    }
+
+    internal class Imdb : IImdb
+    {
+        public ImdbMovie ImdbMovie(string imdbId)
         {
             async Task<ImdbMovie> Json()
             {
@@ -29,7 +33,7 @@ namespace MovieRentals
     {
         public static Movie Price(string imdbId)
         {
-            var imdbMovie = Imdb.ImdbMovie(imdbId);
+            var imdbMovie = new Imdb().ImdbMovie(imdbId);
 
             double price = 3.95;
 

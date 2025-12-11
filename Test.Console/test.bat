@@ -1,4 +1,4 @@
-﻿cd..
+cd..
 
 dotnet build
 
