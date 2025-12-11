@@ -29,7 +29,7 @@ namespace MessageChains
                     invoiceTotal += invoiceItem.Subtotal;
                 }
 
-                if (!_customer.Address.Country.IsInEurope)
+                if (!country.IsInEurope)
                 {
                     invoiceTotal += ShippingCostOutsideEu;
                 }
