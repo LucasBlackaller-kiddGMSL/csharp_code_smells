@@ -21,4 +21,19 @@ public class Basket
             existing.Quantity += qty;
         }
     }
+
+    public Order CreateOrder(Address shippingAddress)
+    {
+        var order = new Order();
+
+        order.ShippingAddress = shippingAddress;
+
+        foreach (var item in Items)
+        {
+            order.Items.Add(item);
+            order.Total += item.Product.UnitPrice * item.Quantity;
+        }
+
+        return order;
+    }
 }
