@@ -17,7 +17,6 @@ public class OrderServiceTests
         Order order = new OrderService().CreateOrder(
             customerName,
             customerEmail,
-            productName,
             shippingAddress,
             billingAddress,
             orderDate,
@@ -40,7 +39,6 @@ public class OrderServiceTests
         Item item = new Item(3, 150.75m, "");
 
         Order order = new OrderService().CreateOrder(
-            "",
             "",
             "",
             "",
