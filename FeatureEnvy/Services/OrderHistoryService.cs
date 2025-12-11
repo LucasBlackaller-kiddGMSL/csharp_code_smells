@@ -15,13 +15,10 @@ public class OrderHistory
 public class OrderHistoryService
 {
     private readonly OrderHistory _orderHistory;
-    private readonly List<Order> _orders;
 
     public OrderHistoryService(OrderHistory orderHistory)
     {
         _orderHistory = orderHistory;
-        var orders = orderHistory.Orders;
-        _orders = orders;
     }
 
     public IEnumerable<Order> FindOrdersByProduct(Product product)
