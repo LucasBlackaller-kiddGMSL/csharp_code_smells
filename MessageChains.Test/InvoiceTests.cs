@@ -9,7 +9,7 @@ namespace MessageChains.Test
 		    Address address = new Address(new Country(false));
 		    Customer customer = new Customer(address);
     		
-		    Invoice invoice = new Invoice(customer, customer.Address.Country);
+		    Invoice invoice = new Invoice(customer.Address.Country);
 		    invoice.AddItem(new InvoiceItem("Product X", 1, 100));
     		
 		    Assert.That(invoice .TotalPrice, Is.EqualTo(100 + Invoice.ShippingCostOutsideEu));

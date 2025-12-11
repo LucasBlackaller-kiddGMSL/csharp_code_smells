@@ -4,12 +4,10 @@ namespace MessageChains
     {
         public const double ShippingCostOutsideEu = 10;
         private readonly IList<InvoiceItem> _invoiceItems = new List<InvoiceItem>();
-        private readonly Customer _customer;
         private readonly Country country;
 
-        public Invoice(Customer customer, Country country)
+        public Invoice(Country country)
         {
-            this._customer = customer;
             this.country = country;
         }
 
