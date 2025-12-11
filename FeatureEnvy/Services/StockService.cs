@@ -10,6 +10,12 @@ public class Warehouse
     }
 
     public List<WarehouseStock> Stocks { get; }
+
+    public bool CheckStock(Product product, int qty)
+    {
+        var stock = this.Stocks.FirstOrDefault(s => s.Product == product);
+        return stock != null && stock.Quantity >= qty;
+    }
 }
 
 public class StockService
@@ -23,7 +29,6 @@ public class StockService
 
     public bool CheckStock(Product product, int qty)
     {
-        var stock = _warehouse.Stocks.FirstOrDefault(s => s.Product == product);
-        return stock != null && stock.Quantity >= qty;
+        return _warehouse.CheckStock(product, qty);
     }
 }
