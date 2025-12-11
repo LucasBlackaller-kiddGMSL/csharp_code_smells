@@ -7,10 +7,10 @@ namespace MessageChains
         private readonly Customer _customer;
         private readonly Country country;
 
-        public Invoice(Customer customer)
+        public Invoice(Customer customer, Country country)
         {
             this._customer = customer;
-            this.country = customer.Address.Country;
+            this.country = country;
         }
 
         public void AddItem(InvoiceItem invoiceItem)
