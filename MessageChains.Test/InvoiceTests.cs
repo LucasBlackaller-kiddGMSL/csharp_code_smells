@@ -6,8 +6,6 @@ namespace MessageChains.Test
 	    [Test]
 	    public void ShippingShouldBeAddedIfAddressIsNotInEurope() {
             var country = new Country(false);
-            Address address = new Address(country);
-		    Customer customer = new Customer(address);
     		
 		    Invoice invoice = new Invoice(country);
 		    invoice.AddItem(new InvoiceItem("Product X", 1, 100));
