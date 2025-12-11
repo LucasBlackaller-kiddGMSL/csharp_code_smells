@@ -13,7 +13,7 @@ public class Order
     {
         foreach (var item in this.Items)
         {
-            if (!stockService.CheckStock(item.Product, item.Quantity))
+            if (!warehouse.CheckStock(item.Product, item.Quantity))
             {
                 this.Confirmed = false;
                 return false;
