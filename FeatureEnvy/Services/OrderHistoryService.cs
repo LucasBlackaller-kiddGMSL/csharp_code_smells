@@ -23,6 +23,11 @@ public class OrderHistoryService
 
     public IEnumerable<Order> FindOrdersByProduct(Product product)
     {
+        return FindOrdersByProduct2(product);
+    }
+
+    private IEnumerable<Order> FindOrdersByProduct2(Product product)
+    {
         return _orderHistory.Orders.Where(o =>
             o.Confirmed &&
             o.Items.Any(i => i.Product == product));
