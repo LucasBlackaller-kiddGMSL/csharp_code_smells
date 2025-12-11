@@ -2,7 +2,7 @@
 
 public class FootballScoreStats
 {
-    private FootballData _footballData;
+    private IGameData _footballData;
 
     public FootballScoreStats()
     {
