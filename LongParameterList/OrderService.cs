@@ -2,23 +2,23 @@
 
 public class Order
 {
-    public Order(
-        string customerName,
+    public Order(string customerName,
         string customerEmail,
         string productName,
         int quantity,
         decimal price,
         string shippingAddress,
         string billingAddress,
-        DateTime orderDate)
+        DateTime orderDate, 
+        Customer customer)
     {
-        CustomerName = customerName;
-        CustomerEmail = customerEmail;
+        CustomerName = customer.CustomerName;
+        CustomerEmail = customer.CustomerEmail;
         ProductName = productName;
         Quantity = quantity;
         Price = price;
-        ShippingAddress = shippingAddress;
-        BillingAddress = billingAddress;
+        ShippingAddress = customer.ShippingAddress;
+        BillingAddress = customer.BillingAddress;
         OrderDate = orderDate;
     }
 
@@ -84,7 +84,8 @@ public class OrderService
             price: item.Price,
             shippingAddress: shippingAddress,
             billingAddress: billingAddress,
-            orderDate: orderDate);
+            orderDate: orderDate, 
+            customer: customer);
 
         return order;
     }
