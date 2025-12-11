@@ -4,7 +4,7 @@ namespace FeatureEnvy.Services;
 
 public class StockService
 {
-    private readonly Warehouse _warehouse;
+    public readonly Warehouse _warehouse;
 
     public StockService(Warehouse warehouse)
     {

@@ -13,6 +13,6 @@ public class OrderConfirmationService
 
     public bool ConfirmOrder(Order order)
     {
-        return order.ConfirmOrder(_stockService);
+        return order.ConfirmOrder(_stockService, _stockService._warehouse);
     }
 }

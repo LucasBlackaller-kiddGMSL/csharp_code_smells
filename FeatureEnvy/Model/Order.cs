@@ -9,7 +9,7 @@ public class Order
     public decimal Total { get; set; }
     public bool Confirmed { get; set; }
 
-    public bool ConfirmOrder(StockService stockService)
+    public bool ConfirmOrder(StockService stockService, Warehouse warehouse)
     {
         foreach (var item in this.Items)
         {
