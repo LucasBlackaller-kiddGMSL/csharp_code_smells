@@ -1,4 +1,6 @@
-﻿namespace FeatureEnvy.Model;
+﻿using FeatureEnvy.Services;
+
+namespace FeatureEnvy.Model;
 
 public class Order
 {
@@ -6,4 +8,19 @@ public class Order
     public Address ShippingAddress { get; set; }
     public decimal Total { get; set; }
     public bool Confirmed { get; set; }
+
+    public bool ConfirmOrder(StockService stockService)
+    {
+        foreach (var item in this.Items)
+        {
+            if (!stockService.CheckStock(item.Product, item.Quantity))
+            {
+                this.Confirmed = false;
+                return false;
+            }
+        }
+
+        this.Confirmed = true;
+        return true;
+    }
 }
