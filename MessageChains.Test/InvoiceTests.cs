@@ -5,11 +5,11 @@ namespace MessageChains.Test
 	
 	    [Test]
 	    public void ShippingShouldBeAddedIfAddressIsNotInEurope() {
-    		
-		    Address address = new Address(new Country(false));
+            var country = new Country(false);
+            Address address = new Address(country);
 		    Customer customer = new Customer(address);
     		
-		    Invoice invoice = new Invoice(customer.Address.Country);
+		    Invoice invoice = new Invoice(country);
 		    invoice.AddItem(new InvoiceItem("Product X", 1, 100));
     		
 		    Assert.That(invoice .TotalPrice, Is.EqualTo(100 + Invoice.ShippingCostOutsideEu));
