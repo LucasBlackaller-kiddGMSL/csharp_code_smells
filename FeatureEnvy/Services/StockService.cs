@@ -2,12 +2,23 @@
 
 namespace FeatureEnvy.Services;
 
+public class Warehouse
+{
+    public Warehouse(List<WarehouseStock> stocks)
+    {
+        Stocks = stocks;
+    }
+
+    public List<WarehouseStock> Stocks { get; }
+}
+
 public class StockService
 {
     private readonly List<WarehouseStock> _stocks;
 
-    public StockService(List<WarehouseStock> stocks)
+    public StockService(Warehouse warehouse)
     {
+        var stocks = warehouse.Stocks;
         _stocks = stocks;
     }
 

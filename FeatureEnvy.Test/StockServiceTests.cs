@@ -22,7 +22,7 @@ public class StockServiceTests
             new WarehouseStock { Product = _product, Quantity = 10 }
         };
 
-        _service = new StockService(_stocks);
+        _service = new StockService(new Warehouse(_stocks));
     }
 
     [Test]

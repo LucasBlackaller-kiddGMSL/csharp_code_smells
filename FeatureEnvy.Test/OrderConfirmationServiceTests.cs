@@ -24,7 +24,7 @@ public class OrderConfirmationServiceTests
             new() { Product = _product, Quantity = 5 }
         };
 
-        _stockService = new StockService(_stocks);
+        _stockService = new StockService(new Warehouse(_stocks));
         _service = new OrderConfirmationService(_stockService);
 
         _order = new Order();
