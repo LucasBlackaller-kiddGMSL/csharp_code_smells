@@ -14,4 +14,19 @@ public class Game
         AwayTeam = awayTeam;
         AwayTeamScore = awayTeamScore;
     }
+
+    public int GetTeamScore(string teamName, int total)
+    {
+        if (this.HomeTeam.Equals(teamName))
+        {
+            total += this.HomeTeamScore;
+        }
+
+        if (this.AwayTeam.Equals(teamName))
+        {
+            total += this.AwayTeamScore;
+        }
+
+        return total;
+    }
 }
