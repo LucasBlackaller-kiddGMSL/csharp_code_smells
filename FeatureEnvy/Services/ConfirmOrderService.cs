@@ -13,9 +13,14 @@ public class OrderConfirmationService
 
     public bool ConfirmOrder(Order order)
     {
+        return OrderConfirm(order, _stockService);
+    }
+
+    private bool OrderConfirm(Order order, StockService stockService)
+    {
         foreach (var item in order.Items)
         {
-            if (!_stockService.CheckStock(item.Product, item.Quantity))
+            if (!stockService.CheckStock(item.Product, item.Quantity))
             {
                 order.Confirmed = false;
                 return false;
