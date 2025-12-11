@@ -15,11 +15,12 @@ public class Warehouse
 public class StockService
 {
     private readonly List<WarehouseStock> _stocks;
+    private readonly Warehouse _warehouse;
 
     public StockService(Warehouse warehouse)
     {
-        var stocks = warehouse.Stocks;
-        _stocks = stocks;
+        _warehouse = warehouse;
+        _stocks = warehouse.Stocks;
     }
 
     public bool CheckStock(Product product, int qty)
