@@ -9,14 +9,15 @@ public class Order
         decimal price,
         string shippingAddress,
         string billingAddress,
-        DateTime orderDate, 
-        Customer customer)
+        DateTime orderDate,
+        Customer customer, 
+        Item item)
     {
         CustomerName = customer.CustomerName;
         CustomerEmail = customer.CustomerEmail;
         ProductName = productName;
-        Quantity = quantity;
-        Price = price;
+        Quantity = item.Quantity;
+        Price = item.Price;
         ShippingAddress = customer.ShippingAddress;
         BillingAddress = customer.BillingAddress;
         OrderDate = orderDate;
@@ -85,7 +86,7 @@ public class OrderService
             shippingAddress: shippingAddress,
             billingAddress: billingAddress,
             orderDate: orderDate, 
-            customer: customer);
+            customer: customer, item: item);
 
         return order;
     }
