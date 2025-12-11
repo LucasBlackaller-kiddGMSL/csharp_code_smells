@@ -14,11 +14,7 @@ public class OrderServiceTests
         string billingAddress = "123 Main St";
         DateTime orderDate = new DateTime(2025, 12, 7);
         
-        Order order = new OrderService().CreateOrder(
-            customerName,
-            customerEmail,
-            shippingAddress,
-            billingAddress,
+        Order order = new OrderService().CreateOrder(new Customer(customerName, customerEmail, shippingAddress, billingAddress),
             orderDate,
             item);
 
@@ -38,11 +34,7 @@ public class OrderServiceTests
     {
         Item item = new Item(3, 150.75m, "");
 
-        Order order = new OrderService().CreateOrder(
-            "",
-            "",
-            "",
-            "",
+        Order order = new OrderService().CreateOrder(new Customer("", "", "", ""),
             DateTime.Now,
             item);
 

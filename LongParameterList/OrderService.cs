@@ -29,15 +29,33 @@ public class Item
     }
 }
 
+public class Customer
+{
+    public Customer(string customerName, string customerEmail, string shippingAddress, string billingAddress)
+    {
+        CustomerName = customerName;
+        CustomerEmail = customerEmail;
+        ShippingAddress = shippingAddress;
+        BillingAddress = billingAddress;
+    }
+
+    public string CustomerName { get; }
+    public string CustomerEmail { get; }
+    public string ShippingAddress { get; }
+    public string BillingAddress { get; }
+}
+
 public class OrderService
 {
-    public Order CreateOrder(string customerName,
-        string customerEmail,
-        string shippingAddress,
-        string billingAddress,
+    public Order CreateOrder(
+        Customer customer,
         DateTime orderDate,
         Item item)
     {
+        var customerName = customer.CustomerName;
+        var customerEmail = customer.CustomerEmail;
+        var shippingAddress = customer.ShippingAddress;
+        var billingAddress = customer.BillingAddress;
         var order = new Order
         {
             CustomerName = customerName,
