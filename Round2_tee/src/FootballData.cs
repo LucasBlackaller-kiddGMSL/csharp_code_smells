@@ -1,8 +1,8 @@
 ﻿namespace Round2_tee;
 
-public class FootballData
+public class FootballData : IGameData
 {
-    public static Game[] GetAllPlayed()
+    public Game[] GetAllPlayed()
     {
         Game[] played =
         {
