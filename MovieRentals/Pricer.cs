@@ -4,6 +4,7 @@ namespace MovieRentals
 {
     internal interface IImdb
     {
+        ImdbMovie ImdbMovie(string imdbId);
     }
 
     internal class Imdb : IImdb
