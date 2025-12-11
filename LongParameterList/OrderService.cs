@@ -14,6 +14,19 @@ public class Order
     public decimal TotalAmount => Quantity * Price;
 }
 
+
+public class Item
+{
+    public int Quantity { get; }
+    public decimal Price { get; }
+
+    public Item(int quantity, decimal price)
+    {
+        Quantity = quantity;
+        Price = price;
+    }
+}
+
 public class OrderService
 {
     public Order CreateOrder(
