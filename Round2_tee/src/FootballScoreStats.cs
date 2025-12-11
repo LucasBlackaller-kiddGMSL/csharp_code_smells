@@ -4,9 +4,9 @@ public class FootballScoreStats
 {
     private IGameData _footballData;
 
-    public FootballScoreStats()
+    public FootballScoreStats(FootballData footballData)
     {
-        _footballData = new FootballData();
+        _footballData = footballData;
     }
 
     public int TeamTotal(string teamName)
