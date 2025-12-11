@@ -2,12 +2,23 @@
 
 namespace FeatureEnvy.Services;
 
+public class OrderHistory
+{
+    public OrderHistory(List<Order> orders)
+    {
+        Orders = orders;
+    }
+
+    public List<Order> Orders { get; }
+}
+
 public class OrderHistoryService
 {
     private readonly List<Order> _orders;
 
-    public OrderHistoryService(List<Order> orders)
+    public OrderHistoryService(OrderHistory orderHistory)
     {
+        var orders = orderHistory.Orders;
         _orders = orders;
     }
 
