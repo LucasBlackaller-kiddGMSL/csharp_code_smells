@@ -2,6 +2,26 @@
 
 public class Order
 {
+    public Order(
+        string customerName,
+        string customerEmail,
+        string productName,
+        int quantity,
+        decimal price,
+        string shippingAddress,
+        string billingAddress,
+        DateTime orderDate)
+    {
+        CustomerName = customerName;
+        CustomerEmail = customerEmail;
+        ProductName = productName;
+        Quantity = quantity;
+        Price = price;
+        ShippingAddress = shippingAddress;
+        BillingAddress = billingAddress;
+        OrderDate = orderDate;
+    }
+
     public string CustomerName { get; set; }
     public string CustomerEmail { get; set; }
     public string ProductName { get; set; }
@@ -56,17 +76,15 @@ public class OrderService
         var customerEmail = customer.CustomerEmail;
         var shippingAddress = customer.ShippingAddress;
         var billingAddress = customer.BillingAddress;
-        var order = new Order
-        {
-            CustomerName = customerName,
-            CustomerEmail = customerEmail,
-            ProductName = item.ProductName,
-            Quantity = item.Quantity,
-            Price = item.Price,
-            ShippingAddress = shippingAddress,
-            BillingAddress = billingAddress,
-            OrderDate = orderDate
-        };
+        var order = new Order(
+            customerName: customerName,
+            customerEmail: customerEmail,
+            productName: item.ProductName,
+            quantity: item.Quantity,
+            price: item.Price,
+            shippingAddress: shippingAddress,
+            billingAddress: billingAddress,
+            orderDate: orderDate);
 
         return order;
     }
