@@ -35,6 +35,11 @@ public class OrderHistoryService
 
     public IEnumerable<Order> FindOrdersByAddress(Address address)
     {
+        return FindOrdersByAddress2(address);
+    }
+
+    private IEnumerable<Order> FindOrdersByAddress2(Address address)
+    {
         return _orderHistory.Orders.Where(o =>
             o.Confirmed &&
             o.ShippingAddress.Country == address.Country);
