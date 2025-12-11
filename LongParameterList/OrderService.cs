@@ -17,11 +17,13 @@ public class Order
 
 public class Item
 {
+    public string ProductName { get; }
     public int Quantity { get; }
     public decimal Price { get; }
 
     public Item(int quantity, decimal price, string productName)
     {
+        ProductName = productName;
         Quantity = quantity;
         Price = price;
     }
@@ -41,7 +43,7 @@ public class OrderService
         {
             CustomerName = customerName,
             CustomerEmail = customerEmail,
-            ProductName = productName,
+            ProductName = item.ProductName,
             Quantity = item.Quantity,
             Price = item.Price,
             ShippingAddress = shippingAddress,
